@@ -14,6 +14,12 @@
 			<b><a id="enter_button" href="home.html">Enter</a></b>
 			<br><br>
 			<u><p>Website Status:</p></u><progress min="0" max="100" value="5"></progress>
+				<?php 
+				$progress = 0.05
+				$total = 1
+				$total_progress = ($progress / $total)*100
+				<p>echo "{$total_progress}.%"</p>
+				?>
 		</div>
 	<footer>
 		<p>All image credit to <a href="http://creativity103.com">creativity103</a><p>
