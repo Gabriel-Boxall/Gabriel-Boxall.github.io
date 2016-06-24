@@ -80,14 +80,23 @@ footer a:active{
 	text-decoration:none;
 	color:white;
 	font-family:Arial, sans-serif;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:16px;
 }
 .jumbotron a:hover{
 	text-decoration:none;
 	color:white;
 	font-family:Arial, sans-serif;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:16px;
 }
 .jumbotron a:active{
 	text-decoration:none;
 	color:white;
 	font-family:Arial, sans-serif;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:16px;
 }
