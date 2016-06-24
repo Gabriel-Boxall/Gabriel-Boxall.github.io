@@ -76,17 +76,17 @@ footer a:active{
 	color:white;
 	font-family:Arial, sans-serif;
 }
-.jumbotron, a{
+.jumbotron a{
 	text-decoration:none;
 	color:white;
 	font-family:Arial, sans-serif;
 }
-.jumbotron, a:hover{
+.jumbotron a:hover{
 	text-decoration:none;
 	color:white;
 	font-family:Arial, sans-serif;
 }
-.jumbotron, a:active{
+.jumbotron a:active{
 	text-decoration:none;
 	color:white;
 	font-family:Arial, sans-serif;
