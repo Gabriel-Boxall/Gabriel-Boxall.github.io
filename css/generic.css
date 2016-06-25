@@ -168,14 +168,14 @@ footer li img {
 #jumleft{
 	float:left;
 	min-height:650px;
-	max-height:100%;
-	overflow:auto;
+	max-height:1200px;
 	width:250px;
 	position:relative;
 	overflow-y:scroll;
 	text-align:center;
 	text-decoration:none;
 	position:relative;
+	padding-top:15px;
 }
 #jumleft a{
 	text-decoration:none;
@@ -183,13 +183,14 @@ footer li img {
 #jumright{
 	float:right;
 	min-height:650px;
-	max-height:100%;
-	overflow:auto;
+	max-height:1200px;
 	width:250px;
 	position:relative;
 	text-align:center;
 	text-decoration:none;
 	position:relative;
+	padding-top:15px;
+	overflow-y:scroll;
 }
 .container{
 	position:relative;
