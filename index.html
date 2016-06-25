@@ -22,7 +22,7 @@
 					</div>
 				</div>
 				<div class="row"><
-					<div class="col-lg-12">
+					<div class="col-lg-12" id="fade">
 						<div class="col-lg-2">
 						<a href="home.html">Home</a>
 						</div>
@@ -55,4 +55,16 @@
 		<p>All image credit to <a href="http://creativity103.com">creativity103</a><p>
 	</footer>
 	</body>
+	<script type"text/javascript">
+		var NavOpacity = document.getElementById('fade');
+		element.style.opacity = "0.0";
+		element.style.filler = 'alpha(opacity=0)';
+			function changeOpacity =(NavOpacity, 0.01){
+			var NavOpacity = NavOpacity + 0.01;
+				if (NavOpacity == 1){
+					NavOpacity = 1;
+				}
+			}
+		window.setInterval(changeOpacity, 100);
+	</script>
 </html>
