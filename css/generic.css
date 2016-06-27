@@ -130,9 +130,9 @@ header a:active{
 	min-height:650px;
 }
 #overflow{
-	max-height:650px;
+	max-height:800px;
 	overflow-y:scroll;
-	min-height:650px;
+	min-height:800px;
 	border:1px solid black;
 	border-top:none;
 	border-left:none;
