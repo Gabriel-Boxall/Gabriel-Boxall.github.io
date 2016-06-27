@@ -59,13 +59,6 @@ header nav{
 	display:flex;
 	justify-content:flex-end;
 }
-header p {
-	padding: 0 20px;
-	margin:0;
-}
-header{
-	padding:20px 0;
-}
 header .row,
 footer.row{
 	display:flex;
@@ -74,6 +67,8 @@ footer.row{
 header h1{
 	font-weight:700;
 	margin:0;
+	color:white;
+	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 .jumbotron{
 	display:flex;
@@ -102,6 +97,7 @@ header a{
 	position:relative;
 	font-size:18px;
 	font-weight:500;
+	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 
 header a:hover{
@@ -111,6 +107,7 @@ header a:hover{
 	padding-right:20px;
 	font-size:18px;
 	font-weight:500;
+	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 header a:active{
 	text-decoration:none;
@@ -120,6 +117,7 @@ header a:active{
 	top:2px;
 	font-size:18px;
 	font-weight:500;
+	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 #chng_log_title{
 	padding:10px;
