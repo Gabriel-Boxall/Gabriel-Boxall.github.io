@@ -47,13 +47,11 @@ p {
 }
 a{
 	text-decoration:none;
-	font-family: Futura, Tahoma, sans-serif;
-	color: #ffffff;
+	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 a:hover{
 	text-decoration:none;
-	font-family: Futurama, Tahoma, sans-serif;
-	color:red;
+	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 header nav{
 	display:flex;
@@ -89,32 +87,26 @@ header{
 }
 header a{
 	text-decoration:none;
-	padding-left:10px;
 	color:white;
-	padding-right:10px;
 	position:relative;
 	font-size:22px;
-	font-weight:600;
+	font-weight:500;
 	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 
 header a:hover{
 	text-decoration:none;
-	padding-left:10px;
 	color:white
-	padding-right:10px;
 	font-size:22px;
-	font-weight:600;
+	font-weight:500;
 	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 header a:active{
 	text-decoration:none;
-	padding-left:10px;
 	color:white;
-	padding-right:10px;
 	top:2px;
 	font-size:22px;
-	font-weight:600;
+	font-weight:500;
 	font-family:Tahoma, Verdana, Geneva, sans-serif;
 }
 #chng_log_title{
