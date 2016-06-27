@@ -133,9 +133,6 @@ header a:active{
 	max-height:800px;
 	overflow-y:scroll;
 	min-height:800px;
-	border:1px solid black;
-	border-top:none;
-	border-left:none;
 }
 #twtr_feed_title{
 	padding:10px;
@@ -164,32 +161,4 @@ footer ul {
 footer li img {
   width: 32px;
   height: 32px;
-}
-#jumleft{
-	float:left;
-	min-height:650px;
-	max-height:1200px;
-	width:250px;
-	position:relative;
-	overflow-y:scroll;
-	text-align:center;
-	text-decoration:none;
-	top: 15px;
-}
-#jumleft a{
-	text-decoration:none;
-}
-#jumright{
-	float:right;
-	min-height:650px;
-	max-height:1200px;
-	width:250px;
-	position:relative;
-	text-align:center;
-	text-decoration:none;
-	top:15px;
-	overflow-y:scroll;
-}
-.container{
-	position:relative;
 }
