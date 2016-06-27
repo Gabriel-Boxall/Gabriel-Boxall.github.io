@@ -94,31 +94,32 @@ header{
 	word-wrap:break-word;
 	z-index:1;
 }
-
-#nav_btn{
-	border-left:1px solid #3385ff;
-	padding-left:10px;
-}
 header a{
 	text-decoration:none;
 	padding-left:20px;
-	color:black;
+	color:white;
 	padding-right:20px;
 	position:relative;
+	font-size:18px;
+	font-weight:500;
 }
 
 header a:hover{
 	text-decoration:none;
 	padding-left:20px;
-	color:black;
+	color:white
 	padding-right:20px;
+	font-size:18px;
+	font-weight:500;
 }
 header a:active{
 	text-decoration:none;
 	padding-left:20px;
-	color:black;
+	color:white;
 	padding-right:20px;
 	top:2px;
+	font-size:18px;
+	font-weight:500;
 }
 #chng_log_title{
 	padding:10px;
