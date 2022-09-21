@@ -75,15 +75,32 @@
 			map.on('load', function() {
 				myRoute.addTo(map);
 			});	
-		const popup = new TrimbleMaps.Popup({
-                	offset: 40 
-            	}).setText('Destination');
-		
-	  	const marker = new TrimbleMaps.Marker({
-             		draggable: false
-           	}).setLngLat(-73.97386, 40.76466)
-           	.setPopup(popup)
-           	.addTo(map);
+		 // Create a popup
+            const popup = new TrimbleMaps.Popup({
+                offset: 40 // move around to map 4 borders, you will see its location changes.
+            }).setText('Draggable marker with a popup');
+
+            // Create a marker
+            const marker = new TrimbleMaps.Marker({
+                draggable: true
+            }).setLngLat(center)
+            .setPopup(popup)
+            .addTo(map);
+
+            // Save the panel elements
+            const lngElem = document.getElementById('longitude');
+            const latElem = document.getElementById('latitude');
+            lngElem.innerHTML = center[0].toFixed(6);
+            latElem.innerHTML = center[1].toFixed(6);
+
+            // Listen to the dragend event of the marker
+            marker.on('dragend', function(e){
+                // Extract the lngLat object from the marker in the event
+                const lngLat = e.target.getLngLat();
+                // Update the values in the panel
+                lngElem.innerHTML = lngLat.lng.toFixed(6);
+                latElem.innerHTML = lngLat.lat.toFixed(6);
+            });
        </script>
     </body>
 </html>
