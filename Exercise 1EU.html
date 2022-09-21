@@ -65,6 +65,10 @@
                 ],
 				isDraggable: true
 			 });
+		const popup = new TrimbleMaps.Popup({
+                	offset: 40 
+            	}).setText('Destination');
+		
 	   const marker = new TrimbleMaps.Marker({
              	draggable: false
            }).setLngLat(-0.10783, 51.52077)
