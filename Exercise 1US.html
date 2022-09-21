@@ -43,18 +43,7 @@
         </style>
     </head>
     <body>
-        <div id="map"></div>
-        <div class="map-panel">
-            <div class="group">
-                <span class="label">Longitude:</span>
-                <span id="longitude" class="value"></span>
-            </div>
-            <div class="group">
-                <span class="label">Latitude:</span>
-                <span id="latitude" class="value"></span>
-            </div>
-        </div>
-
+        <div id="map"></div>.
         <script>
             TrimbleMaps.APIKey = '96E9A097BF52354FA03A6C23CCA85EC6';
             const center = [-73.97386, 40.76466];
@@ -67,39 +56,36 @@
                 zoom: 8
             });
 
-            // Create a popup for the destination
-            const popup = new TrimbleMaps.Popup({
+            // Create a popup for the start
+            const strpopup = new TrimbleMaps.Popup({
+                offset: 20
+            }).setText('Start');
+
+            // Create a marker
+            const strmarker = new TrimbleMaps.Marker({
+                draggable: false
+            }).setLngLat(start)
+            .setPopup(strpopup)
+            .addTo(map);
+			
+			// Create a popup for the destination
+            const destpopup = new TrimbleMaps.Popup({
                 offset: 40
             }).setText('Destination');
 
             // Create a marker
-            const marker = new TrimbleMaps.Marker({
+            const destmarker = new TrimbleMaps.Marker({
                 draggable: false
             }).setLngLat(destination)
-            .setPopup(popup)
+            .setPopup(destpopup)
             .addTo(map);
-
-            // Save the panel elements
-            const lngElem = document.getElementById('longitude');
-            const latElem = document.getElementById('latitude');
-            lngElem.innerHTML = center[0].toFixed(6);
-            latElem.innerHTML = center[1].toFixed(6);
-
-            // Listen to the dragend event of the marker
-            marker.on('dragend', function(e){
-                // Extract the lngLat object from the marker in the event
-                const lngLat = e.target.getLngLat();
-                // Update the values in the panel
-                lngElem.innerHTML = lngLat.lng.toFixed(6);
-                latElem.innerHTML = lngLat.lat.toFixed(6);
-            });
 			
 			const myRoute = new TrimbleMaps.Route({
 				routeId: "myRoute",
 				stops: [
                     new TrimbleMaps.LngLat(-74.60833, 40.35296), //start point
                     new TrimbleMaps.LngLat(-74.65075, 40.39099), // first stop
-		    new TrimbleMaps.LngLat(-73.97386, 40.76466), //final stop
+					new TrimbleMaps.LngLat(-73.97386, 40.76466), //final stop
                 ],
 				isDraggable: true
 			 });
