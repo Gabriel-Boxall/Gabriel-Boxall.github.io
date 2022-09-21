@@ -2,88 +2,100 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="https://maps-sdk.trimblemaps.com/v3/trimblemaps-3.2.0.css" />
-        <script src="https://maps-sdk.trimblemaps.com/v3/trimblemaps-3.2.0.js"></script>
+        <link rel="stylesheet" href="https://maps-sdk.trimblemaps.com/v3/trimblemaps-3.6.0.css" />
+        <script src="https://maps-sdk.trimblemaps.com/v3/trimblemaps-3.6.0.js"></script>
         <style>
-            body { margin: 10; padding: 10; }
+        body { margin: 0; padding: 0; }
 
-            #map {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                width: 100%;
-            }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
 
-            .map-panel {
-                position: absolute;
-                width: 225px;
-                top: 10px;
-                left: 10px;
-                padding: 10px;
-                background-color: #fff;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-                font-family: 'Open Sans', sans-serif;
-                font-size: .85em;
-            }
+        .map-panel {
+            position: absolute;
+            width: 225px;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            font-family: open sans, sans-serif;
+            font-size: .90em;
+        }
 
-            .group {
-                padding: 3px 0;
-            }
+        .group {
+            padding: 3px 0;
+        }
 
-            .group .label {
-                display: inline-block;
-                width: 70px;
-                font-style: italic;
-                color: #888;
-            }
+        .group .label {
+            display: inline-block;
+            width: 65px;
+            font-style: italic;
+            color: #888;
+        }
 
-            .group .value {
-                display: inline-block;
-            }
-
+        .group .value {
+            display: inline-block;
+        }
         </style>
     </head>
     <body>
-        <div id="map"></div>
-
+        <div id="map"></div>.
         <script>
-           
             TrimbleMaps.APIKey = '96E9A097BF52354FA03A6C23CCA85EC6';
+          	const center = [-0.10783, 51.52077];
+		const start = [0.50565, 51.38964];
+		const stop1 = [-0.12554, 51.53204];
+		const destination = [-0.10783, 51.52077];
             const map = new TrimbleMaps.Map({
-                container: 'map',
-                style: TrimbleMaps.Common.Style.TRANSPORTATION,
-                center: new TrimbleMaps.LngLat(-0.10783, 51.52077),
-		region: TrimbleMaps.Common.Region.EU,
-                zoom: 11
+                container: 'map', // container id
+		style: TrimbleMaps.Common.Style.TRANSPORTATION,
+		    	region: TrimbleMaps.Common.Region.EU
+                center: center,
+                zoom: 8
             });
-            const myRoute = new TrimbleMaps.Route({
+
+            // Create a popup for the start
+            const strpopup = new TrimbleMaps.Popup({
+                offset: 20
+            }).setText('Start');
+
+            // Create a marker
+            const strmarker = new TrimbleMaps.Marker({
+                draggable: false
+            }).setLngLat(start)
+            .setPopup(strpopup)
+            .addTo(map);
+			
+			// Create a popup for the destination
+            const destpopup = new TrimbleMaps.Popup({
+                offset: 40
+            }).setText('Destination');
+
+            // Create a marker
+            const destmarker = new TrimbleMaps.Marker({
+                draggable: false
+            }).setLngLat(destination)
+            .setPopup(destpopup)
+            .addTo(map);
+			
+			const myRoute = new TrimbleMaps.Route({
 				routeId: "myRoute",
 				stops: [
-                    new TrimbleMaps.LngLat(0.50565, 51.38964),
-                    new TrimbleMaps.LngLat(-0.12554, 51.53204),
-		    new TrimbleMaps.LngLat(-0.10783, 51.52077),
+                  	new TrimbleMaps.start, //start point
+                    	new TrimbleMaps.stop1, // first stop
+			new TrimbleMaps.destination, //final stop
                 ],
-				isDraggable: true
+				isDraggable: false
+				showArrows: true
 			 });
 		
-			myRoute.on("routeloading",function() {
-				console.log("loading route");
-			});	
-			myRoute.on("route",function()  {
-				console.log("route complete");
-				});	
 			map.on('load', function() {
 				myRoute.addTo(map);
 			});	
-		const popup = new TrimbleMaps.Popup({
-                	offset: 40 
-            	}).setText('Destination');
-		
-	   const marker = new TrimbleMaps.Marker({
-             	draggable: false
-           }).setLngLat(-0.10783, 51.52077)
-           .setPopup(popup)
-           .addTo(map);
-       </script>
+        </script>
     </body>
 </html>
