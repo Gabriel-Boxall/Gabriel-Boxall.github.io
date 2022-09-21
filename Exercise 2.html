@@ -55,7 +55,56 @@
                 center: new TrimbleMaps.LngLat(-74.60833, 40.35296), //map center set to start point
                 zoom: 11
             });
-            
+            const geoJsonData = {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: [{
+                        type: 'Feature',
+                        properties: {},
+                        geometry: {
+                            type: 'Polygon',
+                            coordinates: [
+                                [
+                                    [-80.007736,40.447704],
+                                    [-80.004281,40.448271],
+                                    [-80.003683,40.446575],
+                                    [-80.007065,40.445767],
+                                    [-80.007736,40.447704]
+                                ]
+                            ]
+                        }
+                    }]
+                }
+            };
+
+            // Wait for the map to load before adding layers and data sources
+            map.on('load', function () {
+                // Add GeoJSON data source to the map
+                map.addSource('hqSource', geoJsonData);
+
+                // Add a layer to draw circles for each point in the data source
+                map.addLayer({
+                    id: 'hqPoly',
+                    type: 'fill',
+                    source: 'hqSource',
+                    paint: {
+                        'fill-color': '#000',
+                        'fill-opacity': 0.5
+                    }
+                });
+                // Add a black outline around the polygon.
+                map.addLayer({
+                    'id': 'hqoutline',
+                    'type': 'line',
+                    'source': 'hqSource',
+                    'layout': {},
+                    'paint': {
+                        'line-color': '#000',
+                        'line-width': 3
+                    }
+                });
+            });
        </script>
     </body>
 </html>
