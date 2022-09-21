@@ -65,15 +65,7 @@
                 ],
 				isDraggable: true
 			 });
-		const popup = new TrimbleMaps.Popup({
-                	offset: 40 
-            	}).setText('Destination');
 		
-	   const marker = new TrimbleMaps.Marker({
-             	draggable: false
-           }).setLngLat(-0.10783, 51.52077)
-           .setPopup(popup)
-           .addTo(map);
 			myRoute.on("routeloading",function() {
 				console.log("loading route");
 			});	
@@ -83,6 +75,15 @@
 			map.on('load', function() {
 				myRoute.addTo(map);
 			});	
+		const popup = new TrimbleMaps.Popup({
+                	offset: 40 
+            	}).setText('Destination');
+		
+	   const marker = new TrimbleMaps.Marker({
+             	draggable: false
+           }).setLngLat(-0.10783, 51.52077)
+           .setPopup(popup)
+           .addTo(map);
        </script>
     </body>
 </html>
