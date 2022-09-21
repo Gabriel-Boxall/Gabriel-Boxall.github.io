@@ -61,10 +61,15 @@
 				stops: [
                     new TrimbleMaps.LngLat(0.50565, 51.38964),
                     new TrimbleMaps.LngLat(-0.12554, 51.53204),
-		new TrimbleMaps.LngLat(-0.10783, 51.52077),
+		    new TrimbleMaps.LngLat(-0.10783, 51.52077),
                 ],
 				isDraggable: true
 			 });
+	   const marker = new TrimbleMaps.Marker({
+             	draggable: false
+           }).setLngLat(-0.10783, 51.52077)
+           .setPopup(popup)
+           .addTo(map);
 			myRoute.on("routeloading",function() {
 				console.log("loading route");
 			});	
