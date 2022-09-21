@@ -60,10 +60,20 @@
 				stops: [
                     new TrimbleMaps.LngLat(-74.60833, 40.35296), //start point
                     new TrimbleMaps.LngLat(-74.65075, 40.39099), // first stop
-		                new TrimbleMaps.LngLat(-73.97386, 40.76466), //final stop
+		    new TrimbleMaps.LngLat(-73.97386, 40.76466), //final stop
                 ],
 				isDraggable: true
 			 });
+		
+		const popup = new TrimbleMaps.Popup({
+                	offset: 40 
+            	}).setText('Destination');
+		
+	  	const marker = new TrimbleMaps.Marker({
+             		draggable: false
+           	}).setLngLat(-73.97386, 40.76466)
+           	.setPopup(popup)
+           	.addTo(map);
 			myRoute.on("routeloading",function() {
 				console.log("loading route");
 			});	
