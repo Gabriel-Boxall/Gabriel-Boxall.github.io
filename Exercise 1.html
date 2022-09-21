@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://maps-sdk.trimblemaps.com/v3/trimblemaps-3.2.0.css" />
+        <script src="https://maps-sdk.trimblemaps.com/v3/trimblemaps-3.2.0.js"></script>
+        <style>
+            body { margin: 10; padding: 10; }
+
+            #map {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+            }
+
+            .map-panel {
+                position: absolute;
+                width: 225px;
+                top: 10px;
+                left: 10px;
+                padding: 10px;
+                background-color: #fff;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                font-family: 'Open Sans', sans-serif;
+                font-size: .85em;
+            }
+
+            .group {
+                padding: 3px 0;
+            }
+
+            .group .label {
+                display: inline-block;
+                width: 70px;
+                font-style: italic;
+                color: #888;
+            }
+
+            .group .value {
+                display: inline-block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <script>
+           
+            TrimbleMaps.APIKey = '96E9A097BF52354FA03A6C23CCA85EC6';
+            const map = new TrimbleMaps.Map({
+                container: 'map',
+                style: TrimbleMaps.Common.Style.TRANSPORTATION,
+                center: new TrimbleMaps.LngLat(-74.73254, 40.30074),
+                zoom: 11
+            });
+            const myRoute = new TrimbleMaps.Route({
+				routeId: "myRoute",
+				stops: [
+                    new TrimbleMaps.LngLat(-74.73254, 40.30074),
+                    new TrimbleMaps.LngLat(-74.76126, 40.28204),
+					new TrimbleMaps.LngLat(-74.62839143552195, 40.25385622798343),
+                ],
+				isDraggable: true
+			 });
+			myRoute.on("routeloading",function() {
+				console.log("loading route");
+			});	
+			myRoute.on("route",function()  {
+				console.log("route complete");
+				});	
+			map.on('load', function() {
+				myRoute.addTo(map);
+			});	
+       </script>
+    </body>
+</html>
