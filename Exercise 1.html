@@ -52,15 +52,16 @@
             const map = new TrimbleMaps.Map({
                 container: 'map',
                 style: TrimbleMaps.Common.Style.TRANSPORTATION,
-                center: new TrimbleMaps.LngLat(-74.73254, 40.30074),
+                center: new TrimbleMaps.LngLat(0.04642, 51.53270),
+		region: TrimbleMaps.Common.Region.EU,
                 zoom: 11
             });
             const myRoute = new TrimbleMaps.Route({
 				routeId: "myRoute",
 				stops: [
-                    new TrimbleMaps.LngLat(-74.73254, 40.30074),
-                    new TrimbleMaps.LngLat(-74.76126, 40.28204),
-		new TrimbleMaps.LngLat(-74.62839143552195, 40.25385622798343),
+                    new TrimbleMaps.LngLat(0.04642, 51.53270),
+                    new TrimbleMaps.LngLat(0.04484, 51,53617),
+		new TrimbleMaps.LngLat(0.05264, 51.54203),
                 ],
 				isDraggable: true
 			 });
