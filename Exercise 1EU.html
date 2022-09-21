@@ -85,9 +85,9 @@
 			const myRoute = new TrimbleMaps.Route({
 				routeId: "myRoute",
 				stops: [
-                  	new TrimbleMaps.start, //start point
-                    	new TrimbleMaps.stop1, // first stop
-			new TrimbleMaps.destination, //final stop
+                  	new TrimbleMaps.LngLat(start), //start point
+                    	new TrimbleMaps.LngLat(stop1), // first stop
+			new TrimbleMaps.LngLat(destination), //final stop
                 ],
 				isDraggable: false
 				showArrows: true
